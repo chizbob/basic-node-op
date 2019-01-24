@@ -27,7 +27,7 @@ const fs = require("fs");
        break;
 
      case "tail":
-       commandLibrary.cat(userInputArray.slice(-1));
+       commandLibrary.cat(userInputArray.slice(-2));
        break;
 
      case "error":
@@ -50,21 +50,21 @@ const fs = require("fs");
       });
    },
 
-   "head": function(fullPath) {
-      const fileName = fullPath[0];
-      fs.readFile(fileName, (err, data) => {
-          if (err) throw err;
-          done(data);
-      });
-   },
-
-   "tail": function(fullPath) {
-      const fileName = fullPath[0];
-      fs.readFile(fileName, (err, data) => {
-          if (err) throw err;
-          done(data);
-      });
-   },
+   // "head": function(fullPath) {
+   //    const fileName = fullPath[0];
+   //    fs.readFile(fileName, (err, data) => {
+   //        if (err) throw err;
+   //        done(data);
+   //    });
+   // },
+   //
+   // "tail": function(fullPath) {
+   //    const fileName = fullPath[0];
+   //    fs.readFile(fileName, (err, data) => {
+   //        if (err) throw err;
+   //        done(data);
+   //    });
+   // },
 
    "error": function(command) {
       done(`${command} command not found`)
